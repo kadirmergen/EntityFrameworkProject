@@ -44,6 +44,11 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonClearAllTextBox = new System.Windows.Forms.Button();
+            this.buttonCustomerSearch = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelNumberOfOrders = new System.Windows.Forms.Label();
+            this.buttonProductSearch = new System.Windows.Forms.Button();
+            this.buttonDateSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +58,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 23);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 291);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 277);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -142,7 +147,7 @@
             // 
             // buttonListForAll
             // 
-            this.buttonListForAll.Location = new System.Drawing.Point(492, 326);
+            this.buttonListForAll.Location = new System.Drawing.Point(564, 326);
             this.buttonListForAll.Name = "buttonListForAll";
             this.buttonListForAll.Size = new System.Drawing.Size(125, 23);
             this.buttonListForAll.TabIndex = 11;
@@ -152,7 +157,7 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(492, 355);
+            this.buttonAdd.Location = new System.Drawing.Point(564, 355);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(125, 23);
             this.buttonAdd.TabIndex = 12;
@@ -162,7 +167,7 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(492, 384);
+            this.buttonDelete.Location = new System.Drawing.Point(564, 384);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(125, 23);
             this.buttonDelete.TabIndex = 13;
@@ -172,7 +177,7 @@
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(492, 413);
+            this.buttonUpdate.Location = new System.Drawing.Point(564, 413);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(125, 23);
             this.buttonUpdate.TabIndex = 14;
@@ -190,12 +195,65 @@
             this.buttonClearAllTextBox.UseVisualStyleBackColor = true;
             this.buttonClearAllTextBox.Click += new System.EventHandler(this.buttonClearAllTextBox_Click);
             // 
+            // buttonCustomerSearch
+            // 
+            this.buttonCustomerSearch.Location = new System.Drawing.Point(475, 376);
+            this.buttonCustomerSearch.Name = "buttonCustomerSearch";
+            this.buttonCustomerSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonCustomerSearch.TabIndex = 16;
+            this.buttonCustomerSearch.Text = "Search";
+            this.buttonCustomerSearch.UseVisualStyleBackColor = true;
+            this.buttonCustomerSearch.Click += new System.EventHandler(this.buttonCustomerSearch_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 303);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Number of Orders";
+            // 
+            // labelNumberOfOrders
+            // 
+            this.labelNumberOfOrders.AutoSize = true;
+            this.labelNumberOfOrders.Location = new System.Drawing.Point(108, 303);
+            this.labelNumberOfOrders.Name = "labelNumberOfOrders";
+            this.labelNumberOfOrders.Size = new System.Drawing.Size(35, 13);
+            this.labelNumberOfOrders.TabIndex = 18;
+            this.labelNumberOfOrders.Text = "label7";
+            // 
+            // buttonProductSearch
+            // 
+            this.buttonProductSearch.Location = new System.Drawing.Point(475, 403);
+            this.buttonProductSearch.Name = "buttonProductSearch";
+            this.buttonProductSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonProductSearch.TabIndex = 19;
+            this.buttonProductSearch.Text = "Search";
+            this.buttonProductSearch.UseVisualStyleBackColor = true;
+            this.buttonProductSearch.Click += new System.EventHandler(this.buttonProductSearch_Click);
+            // 
+            // buttonDateSearch
+            // 
+            this.buttonDateSearch.Location = new System.Drawing.Point(475, 350);
+            this.buttonDateSearch.Name = "buttonDateSearch";
+            this.buttonDateSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonDateSearch.TabIndex = 20;
+            this.buttonDateSearch.Text = "Search";
+            this.buttonDateSearch.UseVisualStyleBackColor = true;
+            this.buttonDateSearch.Click += new System.EventHandler(this.buttonDateSearch_Click);
+            // 
             // SiparisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(800, 460);
+            this.Controls.Add(this.buttonDateSearch);
+            this.Controls.Add(this.buttonProductSearch);
+            this.Controls.Add(this.labelNumberOfOrders);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.buttonCustomerSearch);
             this.Controls.Add(this.buttonClearAllTextBox);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.buttonDelete);
@@ -239,5 +297,10 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonClearAllTextBox;
+        private System.Windows.Forms.Button buttonCustomerSearch;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelNumberOfOrders;
+        private System.Windows.Forms.Button buttonProductSearch;
+        private System.Windows.Forms.Button buttonDateSearch;
     }
 }

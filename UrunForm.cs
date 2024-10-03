@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -42,6 +43,7 @@ namespace EntityFrameworkProject
             dataGridView1.DataSource = products;
             dataGridView1.ClearSelection();
             ClearTextBox();
+            labelNumberofProduct.Text = entities.Products.Count().ToString();
         }
 
         private void ClearTextBox()
@@ -132,6 +134,26 @@ namespace EntityFrameworkProject
             catch (Exception ex)
             {
                 MessageBox.Show("Database connection occured with an error\n" + ex.Message);
+            }
+        }
+
+        private void buttonFilter_Click(object sender, EventArgs e)
+        {
+            if (textBoxPrice.Text.ToString().Length == 0)
+            {
+                var products = (from product in entities.Products
+                                where DbFunctions.Like(product.ProductName, textBoxName.Text.ToString() + "%")
+                                select product).ToList();
+                dataGridView1.DataSource = products;
+            }
+            else
+            {
+                int price = Convert.ToInt32(textBoxPrice.Text);
+                var products = (from product in entities.Products
+                                where DbFunctions.Like(product.ProductName, textBoxName.Text.ToString() + "%") &&
+                                product.Price == price
+                                select product).ToList();
+                dataGridView1.DataSource = products;
             }
         }
     }

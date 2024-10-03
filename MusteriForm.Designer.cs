@@ -42,6 +42,9 @@
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelNumberofCustomer = new System.Windows.Forms.Label();
+            this.buttonFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,12 +173,43 @@
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(38, 296);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Number of Customers:";
+            // 
+            // labelNumberofCustomer
+            // 
+            this.labelNumberofCustomer.AutoSize = true;
+            this.labelNumberofCustomer.Location = new System.Drawing.Point(146, 296);
+            this.labelNumberofCustomer.Name = "labelNumberofCustomer";
+            this.labelNumberofCustomer.Size = new System.Drawing.Size(35, 13);
+            this.labelNumberofCustomer.TabIndex = 15;
+            this.labelNumberofCustomer.Text = "label6";
+            // 
+            // buttonFilter
+            // 
+            this.buttonFilter.Location = new System.Drawing.Point(231, 423);
+            this.buttonFilter.Name = "buttonFilter";
+            this.buttonFilter.Size = new System.Drawing.Size(100, 23);
+            this.buttonFilter.TabIndex = 16;
+            this.buttonFilter.Text = "Filter";
+            this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGreen;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 458);
+            this.Controls.Add(this.buttonFilter);
+            this.Controls.Add(this.labelNumberofCustomer);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonClear);
@@ -215,5 +249,8 @@
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelNumberofCustomer;
+        private System.Windows.Forms.Button buttonFilter;
     }
 }

@@ -62,6 +62,7 @@ namespace EntityFrameworkProject
             dataGridView1.DataSource = orders;
             dataGridView1.ClearSelection();
             ClearAllBoxes();
+            labelNumberOfOrders.Text = entities.Orders.Count().ToString();
         }
 
         private void ClearAllBoxes()
@@ -149,6 +150,33 @@ namespace EntityFrameworkProject
         private void buttonClearAllTextBox_Click(object sender, EventArgs e)
         {
             ClearAllBoxes();
+        }
+
+        private void buttonCustomerSearch_Click(object sender, EventArgs e)
+        {
+            int customerId = Convert.ToInt32(comboBoxCustomerId.SelectedValue.ToString());
+            var orders = (from order in entities.Orders
+                          where order.CustomerId == customerId
+                          select order).ToList();
+            dataGridView1.DataSource = orders;
+        }
+
+        private void buttonProductSearch_Click(object sender, EventArgs e)
+        {
+            int productId = Convert.ToInt32(comboBoxProductId.SelectedValue.ToString());
+            var products = (from product in entities.Products
+                            where product.ProductId == productId
+                            select product).ToList();
+            dataGridView1.DataSource = products;
+        }
+
+        private void buttonDateSearch_Click(object sender, EventArgs e)
+        {
+            DateTime date = dateTimePicker1.Value.Date;
+            var orders = (from order in entities.Orders
+                          where order.OrderDate == date
+                          select order).ToList();
+            dataGridView1.DataSource = orders;
         }
     }
 }

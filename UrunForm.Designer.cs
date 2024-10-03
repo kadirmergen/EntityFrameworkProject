@@ -40,6 +40,9 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonClearAllData = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelNumberofProduct = new System.Windows.Forms.Label();
+            this.buttonFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,12 +154,43 @@
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 312);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Number of Product:";
+            // 
+            // labelNumberofProduct
+            // 
+            this.labelNumberofProduct.AutoSize = true;
+            this.labelNumberofProduct.Location = new System.Drawing.Point(117, 312);
+            this.labelNumberofProduct.Name = "labelNumberofProduct";
+            this.labelNumberofProduct.Size = new System.Drawing.Size(35, 13);
+            this.labelNumberofProduct.TabIndex = 13;
+            this.labelNumberofProduct.Text = "label5";
+            // 
+            // buttonFilter
+            // 
+            this.buttonFilter.Location = new System.Drawing.Point(226, 415);
+            this.buttonFilter.Name = "buttonFilter";
+            this.buttonFilter.Size = new System.Drawing.Size(100, 23);
+            this.buttonFilter.TabIndex = 14;
+            this.buttonFilter.Text = "Filter";
+            this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
+            // 
             // UrunForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonFilter);
+            this.Controls.Add(this.labelNumberofProduct);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.buttonClearAllData);
             this.Controls.Add(this.buttonDelete);
@@ -192,5 +226,8 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonClearAllData;
         private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelNumberofProduct;
+        private System.Windows.Forms.Button buttonFilter;
     }
 }

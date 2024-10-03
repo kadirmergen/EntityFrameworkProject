@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -39,12 +40,14 @@ namespace EntityFrameworkProject
             dataGridView1.DataSource = customers;
             dataGridView1.ClearSelection();
             ClearAllSelection();
+            labelNumberofCustomer.Text = entities.Customerss.Count().ToString();
         }
 
         private void CustomerForm_Load(object sender, EventArgs e)
         {
             ShowAllDatas();
             textBoxCustomerId.Text = "0";
+            labelNumberofCustomer.Text = entities.Customerss.Count().ToString();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -143,6 +146,16 @@ namespace EntityFrameworkProject
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+        }
+
+        private void buttonFilter_Click(object sender, EventArgs e)
+        {
+            var customers = (from customer in entities.Customerss
+                             where DbFunctions.Like(customer.FirstName, textBoxFirstName.Text.ToString() + "%") &&
+                                    DbFunctions.Like(customer.LastName, textBoxLastName.Text.ToString() + "%") &&
+                                    DbFunctions.Like(customer.Address, textBoxAddress.Text.ToString() + "%")
+                             select customer).ToList();
+            dataGridView1.DataSource = customers;
         }
     }
 }
